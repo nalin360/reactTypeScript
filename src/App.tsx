@@ -1,18 +1,19 @@
-// import { useState } from 'react'
-// import './App.css'
+import { Toaster } from "react-hot-toast"
 
-import { FC } from "react"
+import { TodoList } from "./components/ToDoApp/TodoList"
+import {useRef, useState} from 'react';
+import { useTodo } from "./context";
+import { AddTodo } from "./components/ToDoApp";
 
-interface AppProps  {
-    title:string
-}
-// const Apps = ({ title }: { title: string }) => {
-//     return <div>App</div>;
-//   };
-const App:FC<AppProps>= ({title}) => {
+const App = () => {
+  
     return (
         <>
-        <div>{title}</div>
+
+            <Toaster position="bottom-center"/>
+            <AddTodo/>
+            <TodoList/>
+          
         </>
     )
 }
